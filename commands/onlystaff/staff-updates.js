@@ -13,11 +13,22 @@ module.exports = {
 			required: true
 		},
 		{
-			name: "choice",
+			name: "choices",
 			description: "The user to add to saying afk",
-			type: "boolean",
-			required: true
-		},
+			type: "STRING",
+			required: true,
+      choices: [
+                {
+                    name: 'forecast',
+                    value: 'forecast'
+                },
+ 
+                {
+                    name: 'current',
+                    value: 'current'
+                }
+            ]
+        },
 		{
 			name: "role",
 			description: "The user to add to saying afk",
@@ -33,13 +44,13 @@ module.exports = {
    */
 	run: async (client, interaction, args) => {
 		const user = interaction.options.getUser('user');
-		const boolean = interaction.options.getBoolean('choice');
+		const chosenString = interaction.options.getString("choices")
 		const mentionable = interaction.options.getMentionable('mentionable');
-		.AddChoice("Joined", joined)
-		.AddChoice("Promote", promoted)
-            	.AddChoice("Demote", demoted)
-            	.AddChoice("Resign", resigned)
-            	.AddChoice("Blacklisted", blacklisted)
-    interaction.reply({ content: `${interaction.options.getUser('user')} has been to ${interaction.options.getUser('choices')} to ${interaction.options.getUser('role')}`})
+		AddChoices("Joined", joined)
+		AddChoices("Promote", promoted)
+    AddChoices("Demote", demoted)
+    AddChoices("Resign", resigned)
+    AddChoices("Blacklisted", blacklisted)
+    interaction.reply({ content: `${interaction.options.getUser('user')} has been to ${interaction.options.getString('choices')} to ${interaction.options.getUser('role')}`})
 	},
 };
