@@ -2,7 +2,7 @@ const { CommandInteraction, MessageEmbed } = require("discord.js");
 
 
 module.exports = {
-	name: "afk",
+	name: "Staff-Updates",
 	description: "user afk on ticket",
 	type: 'CHAT_INPUT',
 	options: [
