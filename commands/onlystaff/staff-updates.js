@@ -17,17 +17,17 @@ module.exports = {
 			description: "The user to add to saying afk",
 			type: "STRING",
 			required: true,
-      choices: [
-                {
-                    name: 'forecast',
-                    value: 'forecast'
-                },
+      			choices: [
+                		 {
+                    			name: 'forecast',
+                   			value: 'forecast'
+              			 },
  
-                {
-                    name: 'current',
-                    value: 'current'
-                }
-            ]
+                		 {
+                    			name: 'current',
+                    			value: 'current'
+                		 }
+            		]
         },
 		{
 			name: "role",
